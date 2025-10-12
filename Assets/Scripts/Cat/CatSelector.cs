@@ -1,15 +1,17 @@
 using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine.UI;
 public class CatSelector : MonoBehaviour
 {
     public static CatSelector instance;
-    public GameObject[] cats;
+
+    public GameObject[] Cats;
     public GameObject[] NoPhysicsCats;
     public int HighestStartingIndex = 3;
 
     [SerializeField] private Image _nextCatImage;
-    [SerializeField] private Sprite[] _fruitSprites;
+    [SerializeField] private Sprite[] _catSprites;
 
     public GameObject NextCat { get; private set; }
 
@@ -20,6 +22,7 @@ public class CatSelector : MonoBehaviour
             instance = this;
         }
     }
+
     private void Start()
     {
         PickNextCat();
@@ -28,6 +31,7 @@ public class CatSelector : MonoBehaviour
     public GameObject PickRandomCatForThrow()
     {
         int randomIndex = Random.Range(0, HighestStartingIndex + 1);
+
         if (randomIndex < NoPhysicsCats.Length)
         {
             GameObject randomCat = NoPhysicsCats[randomIndex];
@@ -41,9 +45,12 @@ public class CatSelector : MonoBehaviour
     {
         int randomIndex = Random.Range(0, HighestStartingIndex + 1);
 
-        if (randomIndex < cats.Length)
+        if (randomIndex < Cats.Length)
         {
             GameObject nextCat = NoPhysicsCats[randomIndex];
+            NextCat = nextCat;
+
+            _nextCatImage.sprite = _catSprites[randomIndex];
         }
     }
 }

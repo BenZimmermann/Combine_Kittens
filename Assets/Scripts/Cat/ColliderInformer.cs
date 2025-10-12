@@ -13,7 +13,7 @@ public class ColliderInformer : MonoBehaviour
             ThrowCatController.instance.CanThrow = true;
             ThrowCatController.instance.SpawnACat(CatSelector.instance.NextCat);
             CatSelector.instance.PickNextCat();
-            //Destroy(this);
+            Destroy(this);
         }
     }
 }

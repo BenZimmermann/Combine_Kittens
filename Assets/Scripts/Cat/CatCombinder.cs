@@ -23,9 +23,10 @@ public class CatCombinder : MonoBehaviour
                     int thisID = gameObject.GetInstanceID();
                     int otherID = collision.gameObject.GetInstanceID();
 
-                    if (thisID > otherID)
+                    if (thisID >  otherID)
                     {
-                        if (_info.CatIndex == CatSelector.instance.cats.Length - 1)
+                        GameManager.instance.IncreaseScore(_info.PointsWhenAnnihilated);
+                        if (_info.CatIndex == CatSelector.instance.Cats.Length - 1)
                         {
                             Destroy(collision.gameObject);
                             Destroy(gameObject);
@@ -52,7 +53,7 @@ public class CatCombinder : MonoBehaviour
     }
     private GameObject SpawnCombinedCat(int index)
     {
-        GameObject go = CatSelector.instance.cats[index + 1];
+        GameObject go = CatSelector.instance.Cats[index + 1];
         return go;
     }
 }

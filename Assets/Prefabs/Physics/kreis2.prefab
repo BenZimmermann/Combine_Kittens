@@ -15,7 +15,8 @@ GameObject:
   - component: {fileID: -193616313701531531}
   - component: {fileID: 6629425598998284115}
   - component: {fileID: -6838179999384651202}
-  m_Layer: 0
+  - component: {fileID: -1200319397062676012}
+  m_Layer: 8
   m_Name: kreis2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -179,9 +180,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3cca5f1dbb426b948ab85e321319ab81, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CatIndex: 1
-  PointsWhenAnnihilated: 1
-  CatMass: 1.45
 --- !u!114 &-6838179999384651202
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -195,5 +193,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CatIndex: 1
-  PointsWhenAnnihilated: 1
-  CatMass: 1
+  PointsWhenAnnihilated: 2
+  CatMass: 1.75
+--- !u!114 &-1200319397062676012
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 289313336495215628}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ee8e18e3af66184f80db0ad0db88dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

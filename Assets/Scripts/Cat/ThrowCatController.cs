@@ -16,7 +16,7 @@ public class ThrowCatController : MonoBehaviour
 
     public Bounds Bounds { get; private set; }
 
-    private const float EXTRA_WIDTH = 0.1f;
+    private const float EXTRA_WIDTH = 0.02f;
 
     public bool CanThrow { get; set; } = true;
 
@@ -41,7 +41,7 @@ public class ThrowCatController : MonoBehaviour
             SpriteIndex index = CurrentCat.GetComponent<SpriteIndex>();
             Quaternion rot = CurrentCat.transform.rotation;
 
-            GameObject go = Instantiate(CatSelector.instance.cats[index.Index], CurrentCat.transform.position, rot);
+            GameObject go = Instantiate(CatSelector.instance.Cats[index.Index], CurrentCat.transform.position, rot);
             go.transform.SetParent(_parentAfterThrow);
             Destroy(CurrentCat);
             CanThrow = false;
