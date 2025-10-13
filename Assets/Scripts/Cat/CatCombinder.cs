@@ -1,10 +1,10 @@
 using UnityEngine;
-
+using System.Collections;
 public class CatCombinder : MonoBehaviour
 {
     private int _layerIndex;
     private CatInfo _info;
-
+    [SerializeField] private ParticleSystem _particleSystem;
     private void Awake()
     { 
         _info = GetComponent<CatInfo>();
@@ -28,12 +28,16 @@ public class CatCombinder : MonoBehaviour
                         GameManager.instance.IncreaseScore(_info.PointsWhenAnnihilated);
                         if (_info.CatIndex == CatSelector.instance.Cats.Length - 1)
                         {
+                            // 
+                            PlayMergeParticles(transform.position);
                             Destroy(collision.gameObject);
                             Destroy(gameObject);
                         }
                         else
                         {
                             Vector3 middlePosition = (transform.position + collision.transform.position) / 2f;
+                            //
+                            PlayMergeParticles(middlePosition);
                             GameObject go = Instantiate(SpawnCombinedCat(_info.CatIndex), GameManager.instance.transform);
                             go.transform.position = middlePosition;
 
@@ -55,5 +59,12 @@ public class CatCombinder : MonoBehaviour
     {
         GameObject go = CatSelector.instance.Cats[index + 1];
         return go;
+    }
+    private void PlayMergeParticles(Vector3 position)
+    {
+        if (ParticleManager.instance != null)
+        {
+            ParticleManager.instance.PlayEffect(position);
+        }
     }
 }
