@@ -8,4 +8,8 @@ public class StartManager : MonoBehaviour
         // Setze die Zielbildrate auf 60 FPS
         SceneManager.LoadScene(1);
     }
+    public void QuitPressed()
+    {
+        Application.Quit();
+    }
 }

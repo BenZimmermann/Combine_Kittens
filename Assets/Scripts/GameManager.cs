@@ -53,7 +53,9 @@ public class GameManager : MonoBehaviour
     }
     public void GameOver()
     {
-            StartCoroutine(FadeGameOut());
+        if (_playerController != null)
+            _playerController.enabled = false;
+        StartCoroutine(FadeGameOut());
 
         //RestartGame();
         // StartCoroutine(RestartGame());

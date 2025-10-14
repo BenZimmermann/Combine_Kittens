@@ -7,17 +7,15 @@ public class AdManager : MonoBehaviour
 {
     public static AdManager instance;
 
-    [Header("Panels & UI")]
-    [SerializeField] private GameObject _watchAdPanel;      // UI Panel mit Video
-    [SerializeField] private GameObject _gameOverPanel;     // Game Over Panel
-    [SerializeField] private Button _closeAdButton;         // Schließen-Button nach Ad-Ende
+    [SerializeField] private GameObject _watchAdPanel;      
+    [SerializeField] private GameObject _gameOverPanel;     
+    [SerializeField] private Button _closeAdButton;         
 
-    [Header("Video Settings")]
-    [SerializeField] private VideoPlayer _videoPlayer;      // Dein Video Player im UI
-    [SerializeField] private VideoClip[] _adClips;          // Liste zufälliger Videos
+    [SerializeField] private VideoPlayer _videoPlayer;      
+    [SerializeField] private VideoClip[] _adClips;          
 
-    [Header("References")]
-    [SerializeField] private PlayerController _playerController; // Spielersteuerung
+    [SerializeField] private PlayerController _playerController; 
+    [SerializeField] private string _catLayerName = "Cat";
 
     private bool _hasWatchedAd = false;
     private bool _isPlayingAd = false;
@@ -32,51 +30,37 @@ public class AdManager : MonoBehaviour
         _videoPlayer.Stop();
     }
 
-    /// <summary>
-    /// Startet den Ad-Vorgang
-    /// </summary>
     public void WatchAD()
     {
         if (_hasWatchedAd || _isPlayingAd )
-            return; // Werbung darf nur einmal angesehen werden
+            return; 
 
         _isPlayingAd = true;
 
-        // Panel aktivieren
         _watchAdPanel.SetActive(true);
         _gameOverPanel.SetActive(false);
         _closeAdButton.gameObject.SetActive(false);
 
-        // Spieler deaktivieren statt Time.timeScale
         if (_playerController != null)
             _playerController.enabled = false;
 
-        // Zufälliges Video wählen
         if (_adClips != null && _adClips.Length > 0)
         {
             int randomIndex = Random.Range(0, _adClips.Length);
             _videoPlayer.clip = _adClips[randomIndex];
         }
 
-        // Video abspielen
         _videoPlayer.loopPointReached += OnVideoFinished;
 
-        // Video starten
         _videoPlayer.Play();
     }
 
-    /// <summary>
-    /// Wird aufgerufen, sobald das Video fertig ist
-    /// </summary>
     private void OnVideoFinished(VideoPlayer vp)
     {
         _closeAdButton.gameObject.SetActive(true);
-        _videoPlayer.loopPointReached -= OnVideoFinished; // Event abmelden
+        _videoPlayer.loopPointReached -= OnVideoFinished;
     }
 
-    /// <summary>
-    /// Wird aufgerufen, wenn der Spieler die Werbung schließt
-    /// </summary>
     public void CloseAD()
     {
         
@@ -85,16 +69,26 @@ public class AdManager : MonoBehaviour
             _isPlayingAd = false;
             _hasWatchedAd = true;
 
-            // Spielersteuerung wieder aktivieren
             if (_playerController != null)
                 _playerController.enabled = true;
 
-            // Video zurücksetzen
             _videoPlayer.Stop();
 
-            // Spiel fortsetzen
-       // GameManager.instance._hasWatchedAd = true;
-        GameManager.instance.RestartGame();
+        //Cat layer as int
+        int catLayer = LayerMask.NameToLayer(_catLayerName);
+        //Find All Objects in Cat layer
+        GameObject[] allObjects = FindObjectsByType<GameObject>(FindObjectsSortMode.None);
+        //foreach object in cat layer, destroy it
+        foreach (GameObject obj in allObjects)
+        {
+            //if object is in cat layer
+            if (obj.layer == catLayer)
+            {
+                //destroy cat :(
+                Destroy(obj);
+            }
+        }
+        //GameManager.instance.RestartGame();
         
     }
 }
