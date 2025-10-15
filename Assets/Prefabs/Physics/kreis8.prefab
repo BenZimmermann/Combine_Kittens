@@ -195,7 +195,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CatIndex: 7
   PointsWhenAnnihilated: 30
-  CatMass: 1
+  CatMass: 1.25
 --- !u!114 &4523449958341852781
 MonoBehaviour:
   m_ObjectHideFlags: 0
