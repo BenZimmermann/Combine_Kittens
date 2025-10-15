@@ -38,6 +38,8 @@ public class ThrowCatController : MonoBehaviour
     {
         if (UserInput.IsThrowPressed && CanThrow)
         {
+            AudioManager.instance.PlaySFX("drop");
+
             SpriteIndex index = CurrentCat.GetComponent<SpriteIndex>();
             Quaternion rot = CurrentCat.transform.rotation;
 

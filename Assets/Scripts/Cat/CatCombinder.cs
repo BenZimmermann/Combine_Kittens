@@ -46,7 +46,7 @@ public class CatCombinder : MonoBehaviour
                             { 
                                 informer.WasCombinedIn = true;
                             }
-
+                            AudioManager.instance.PlaySFX("merge");
                             Destroy(collision.gameObject);
                             Destroy(gameObject);
                         }

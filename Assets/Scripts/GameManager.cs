@@ -63,6 +63,7 @@ public class GameManager : MonoBehaviour
    
     public /*IEnumerator*/ void  RestartGame()
     {
+        AudioManager.instance.PlaySFX("click");
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
 
         //playerControlls Disablen anstatt Time.timeScale
@@ -126,7 +127,7 @@ public class GameManager : MonoBehaviour
     //wenn werbung zuende ist, close ad button aktivieren
     public void QuitGame()
     {
-
+        AudioManager.instance.PlaySFX("click");
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         SceneManager.LoadScene(0);
     }

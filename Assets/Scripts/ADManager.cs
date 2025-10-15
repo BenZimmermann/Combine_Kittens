@@ -41,6 +41,8 @@ public class AdManager : MonoBehaviour
         _gameOverPanel.SetActive(false);
         _closeAdButton.gameObject.SetActive(false);
 
+        AudioManager.instance.PlaySFX("click");
+
         if (_playerController != null)
             _playerController.enabled = false;
 
@@ -73,7 +75,7 @@ public class AdManager : MonoBehaviour
                 _playerController.enabled = true;
 
             _videoPlayer.Stop();
-
+        AudioManager.instance.PlaySFX("click");
         //Cat layer as int
         int catLayer = LayerMask.NameToLayer(_catLayerName);
         //Find All Objects in Cat layer

@@ -1026,7 +1026,7 @@ MonoBehaviour:
   - {fileID: 1815515578344914835, guid: 4b1b2858d6fbc0e4d804951e0e035af9, type: 3}
   - {fileID: 3752828823644046984, guid: afadb5ec70f4b59449ce20e7b04fc51f, type: 3}
   - {fileID: 8014205465112008210, guid: 54cac4cde6a773c46bd21d31c0db0164, type: 3}
-  HighestStartingIndex: 2
+  HighestStartingIndex: 10
   _nextCatImage: {fileID: 1871967556}
   _catSprites:
   - {fileID: 21300000, guid: b200fda367b6d2f4eb0bd0b5ee4b6ec6, type: 3}
@@ -3630,8 +3630,10 @@ MonoBehaviour:
   _closeAdButton: {fileID: 2098256398}
   _videoPlayer: {fileID: 1329088175}
   _adClips:
-  - {fileID: 32900000, guid: 140ce0dad6bda73488148339b8b35687, type: 3}
-  - {fileID: 32900000, guid: 774e14a3a0de69849bdd97e9e3205e7d, type: 3}
+  - {fileID: 32900000, guid: 0de5ab330b0b2214ca648b3145c2ebda, type: 3}
+  - {fileID: 32900000, guid: 4109702f82e866b4cb8253ac76e0432f, type: 3}
+  - {fileID: 32900000, guid: badd47c888abec141a472f96ad728be2, type: 3}
+  - {fileID: 32900000, guid: 8854eb32594e8aa42853d9ddc0e00141, type: 3}
   _playerController: {fileID: 1521716355}
   _catLayerName: Cat
 --- !u!1 &1555220704
