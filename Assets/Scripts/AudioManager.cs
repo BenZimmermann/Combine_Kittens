@@ -45,6 +45,8 @@ public class AudioManager : MonoBehaviour
         }
 
         if (clip != null)
+
             _audioSource.PlayOneShot(clip);
+        _audioSource.pitch = Random.Range(0.95f, 1.05f);
     }
 }

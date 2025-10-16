@@ -78,6 +78,8 @@ public class GameManager : MonoBehaviour
 
     private IEnumerator FadeGameOut()
     {
+
+        //old
         _gameOverPanel.gameObject.SetActive(true);
         Color startColor = _gameOverPanel.color;
         startColor.a = 1f;
@@ -93,6 +95,7 @@ public class GameManager : MonoBehaviour
             _gameOverPanel.color = startColor;
             yield return null;
         }
+
         //playerControlls Disablen anstatt Time.timeScale
         if (_playerController != null)
             _playerController.enabled = false;

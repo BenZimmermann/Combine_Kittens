@@ -8,7 +8,6 @@ public class StartManager : MonoBehaviour
     public void StartPressed()
     {
         AudioManager.instance.PlaySFX("click");
-        // Setze die Zielbildrate auf 60 FPS
         SceneManager.LoadScene(1);
     }
     public void QuitPressed()
