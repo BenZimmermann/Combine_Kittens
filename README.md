@@ -43,8 +43,11 @@ Keep merging to discover all the different types.
 + Some buttons may appear oddly sized but still work
 
 # Gallery
+[](Example_Imgs/Main_Screen.png)
 
+[](Example_Imgs/Game_Play.png)
 
+[](Example_Imgs/Game_Over.png)
 
 # Authors
 
