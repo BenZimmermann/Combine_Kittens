@@ -43,11 +43,18 @@ Keep merging to discover all the different types.
 + Some buttons may appear oddly sized but still work
 
 # Gallery
-[](Example_Imgs/Main_Screen.png)
 
-[](Example_Imgs/Game_Play.png)
+Main Menu
 
-[](Example_Imgs/Game_Over.png)
+![](Example_Imgs/Main_Screen.png)
+
+Gameplay
+
+![](Example_Imgs/Game_Play.png)
+
+Gameover
+
+![](Example_Imgs/Game_Over.png)
 
 # Authors
 
