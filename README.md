@@ -64,7 +64,7 @@ Ben Zimmermann
 
 Lead Artist: 
 
-Emma
+Emma Reissfelder
 
 # Inspired by
 
